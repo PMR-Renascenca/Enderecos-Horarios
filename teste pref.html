@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Contato e Informações</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    .acessibilidade-btn {
+      background-color: #0056b3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #0056b3;
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .card button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #ffffff;
+      color: #0056b3;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .enderecos {
+      margin: 40px auto;
+      width: 80%;
+    }
+
+    .endereco-item {
+      background-color: #0056b3;
+      color: white;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: max-height 0.3s ease;
+    }
+
+    .endereco-titulo {
+      padding: 15px;
+      font-size: 18px;
+      background-color: #004494;
+    }
+
+    .endereco-conteudo {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #0056b3;
+      padding: 0 15px;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .endereco-item:hover .endereco-conteudo {
+      max-height: 200px;
+      padding: 15px;
+    }
+
+    footer {
+      background-color: #004494;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+    <div style="display: flex; align-items: center;">
+      <img src="PMR - LOGO -04.png" alt="Logotipo da Prefeitura Municipal de Renascença - Paraná" style="width: 300px; height: auto;">
+    </div>
+  
+    <h1 style="margin: 0; font-size: 40px; font-style: italic; color: #000066; text-align: center;">Portal da Transparência</h1>
+  
+    <button class="acessibilidade-btn" onclick="toggleAcessibilidade()">Acessibilidade</button>
+  </header>
+  <div id="painelAcessibilidade" style="display: none; position: absolute; top: 100px; right: 20px; background: #0056b3; color: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000;">
+    <button onclick="alterarFonte(1)" style="background: white; color: #0056b3; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">+ Aumentar Fonte</button>
+    
+    <button onclick="alterarFonte(-1)" style="background: white; color: #0056b3; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">- Diminuir Fonte</button>
+    
+    <button onclick="restaurarFonte()" style="background: white; color: #0056b3; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">Restaurar Fonte</button>
+    
+    <button onclick="toggleContraste()" style="background: white; color: #0056b3; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">Ativar/Desativar Contraste</button>
+  </div>
+<div class="container">
+  <div class="card">
+    <h2>Bem-vindo</h2>
+    <p>Esta página foi criada para fornecer informações e facilitar o acesso aos nossos contatos e serviços públicos.</p>
+    <button onclick="window.location.href='http://transparencia.renascenca.pr.gov.br/'">Voltar ao Portal da Transparência</button>
+  </div>
+
+  <div class="card" style="padding: 20px; background-color: #0056b3; border-radius: 10px; color: white; max-width: 300px;">
+    <h2>Contatos</h2>
+  
+    <p>
+      <a href="https://facebook.com" target="_blank" style="display: inline-block; background-color: #1877f2; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+        Facebook
+      </a>
+    </p>
+  
+    <p>
+      <a href="https://instagram.com" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+        Instagram
+      </a>
+    </p>
+  
+    <p>Telefone: (46) 3550-8300</p>
+  </div>
+
+<div class="enderecos">
+  <div class="endereco-item">
+    <div class="endereco-titulo">PAÇO MUNICIPAL</div>
+    <div class="endereco-conteudo"><p><strong>Rua:</strong> Getulio Vargas, nº 901 - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8300</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7:30h às 11:30h (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:ouvidoria2@renascenca.pr.gov.br">
+            ouvidoria2@renascenca.pr.gov.br
+          </a>
+        </p></div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">SECRETARIA DE ADMINISTRAÇÃO</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Getulio Vargas, nº 901 - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8310</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7:30h às 11:30h (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:administracao@renascenca.pr.gov.br">
+            administracao@renascenca.pr.gov.br
+          </a>
+        </p>
+    </div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">POSTO DE SAÚDE</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Nereu Ramos, nº 820 - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8305</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 07:30h às 11:30h (manhã) e das 13h às 17h (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:saude@renascenca.pr.gov.br">
+            saude@renascenca.pr.gov.br
+          </a>
+        </p>
+      </div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">SECRETARIA DE SAÚDE</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Getulio Vargas, nº 901 - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8348</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 07h30 às 11:30h (manhã) e das 13h às 17h (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:saude@renascenca.pr.gov.br">
+            saude@renascenca.pr.gov.br
+          </a>
+        </p></div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">SECRETARIA DE AÇÃO SOCIAL - CRAS</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Nilo Peçanha - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8303</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 07h30 às 11h30 (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:social@renascenca.pr.gov.br">
+            social@renascenca.pr.gov.br
+          </a>
+        </p></div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">SECRETARIA DE EDUCAÇÃO</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Getúlio Vargas, nº 901 - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8344</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 07h30 às 11h30 (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:educa@renascenca.pr.gov.br">
+            educa@renascenca.pr.gov.br
+          </a>
+        </p></div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">ESCOLA IDA KUMMER</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Luiz Caovila, nº 60 - Bairro Cristo Rei</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8338</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7h30 às 11h30 (manhã) e das 13h às 17h (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:ik@renascenca.pr.gov.br">
+            ik@renascenca.pr.gov.br
+          </a>
+        </p></div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">CMEI GIRASSOL</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Costa e Silva, nº 439 - Bairro Cristo Rei</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8342</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7h30 às 11h30 (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:cmei@renascenca.pr.gov.br">
+            cmei@renascenca.pr.gov.br
+          </a>
+        </p>
+    </div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">DEPARTAMENTO DE ESPORTES</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Marechal Floriano Peixoto - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8329</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 8h às 11h30 (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:esporte@renascenca.pr.gov.br">
+            esporte@renascenca.pr.gov.br
+          </a>
+        </p></div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">SECRETARIA AGRICULTURA - BLOCO PRODUTOR</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Getúlio Vargas, nº 901 - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8317</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7h30 às 11h30 (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:agricultura@renascenca.pr.gov.br">
+            agricultura@renascenca.pr.gov.br
+          </a>
+        </p>
+    </div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">CONSELHO TUTELAR</div>
+    <div class="endereco-conteudo">  <p><strong>Rua:</strong> Nilo Peçanha - Centro</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 91317702</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7h30 às 11h30 (manhã) e das 13h30 às 17h30 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:conselhotutelar@renascenca.pr.gov.br">
+            conselhotutelar@renascenca.pr.gov.br
+          </a>
+        </p>
+    </div>
+  </div>
+  <div class="endereco-item">
+    <div class="endereco-titulo">GARAGEM- PARQUE DE MÁQUINAS</div>
+    <div class="endereco-conteudo"> <p><strong>Rua:</strong>Rua PR 280 - Bairro Associação</p>
+        <p><strong>Cidade:</strong> Renascença - Paraná</p>
+        <p><strong>CEP:</strong> 85610-000</p>
+        <p><strong>Telefone:</strong> (46) 3550-8308</p>
+        <p><strong>Atendimento:</strong> De segunda a sexta-feira: das 7h30 às 11h30 (manhã) e das 13h00 às 17h00 (tarde)</p>
+        <p><strong>Email de contato:</strong> 
+          <a href="mailto:conselhotutelar@renascenca.pr.gov.br">
+            obras@renascenca.pr.gov.br 
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
+<footer style="background-color: #f8f8f8; padding: 20px; text-align: center;">
+    <div style="margin-bottom: 10px;">
+      <a href="http://transparencia.renascenca.pr.gov.br/" style="text-decoration: none; color: #007BFF;">&#8592; Voltar para o Portal da Transparência</a>
+    </div>
+  
+    <div style="margin-bottom: 20px;">
+      <strong>Endereço da Prefeitura:</strong><br>
+      <a href="https://www.google.com/maps/place/Prefeitura+Municipal+de+Renascença+-+PR/" target="_blank" style="text-decoration: none; color: #333;">
+        Rua Getúlio Vargas, nº 901 - Centro, Renascença - PR, CEP: 85610-000
+      </a><br>
+      Telefone: (46) 3550-8300
+    </div>
+  
+    <div style="margin-bottom: 20px;">
+      <strong>Redes Sociais:</strong><br>
+      <a href="https://www.facebook.com/prefeituraderenascenca" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/prefeituraderenascenca" target="_blank" style="margin: 0 10px;">
+        <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
+      </a>
+      <!-- Adicione mais redes sociais se desejar -->
+    </div>
+  
+    <div style="font-size: 12px; color: #777;">
+      &copy; 2025 Prefeitura Municipal de Renascença - Todos os direitos reservados.
+    </div>
+  </footer>
+  <script>
+    let tamanhoFonte = 16; // Tamanho padrão
+    let contrasteAtivo = false; // Estado do contraste
+  
+    function toggleAcessibilidade() {
+      const painel = document.getElementById('painelAcessibilidade');
+      painel.style.display = (painel.style.display === 'none' || painel.style.display === '') ? 'block' : 'none';
+    }
+  
+    function alterarFonte(acao) {
+      tamanhoFonte += acao;
+      if (tamanhoFonte < 10) tamanhoFonte = 10; // Limite mínimo
+      if (tamanhoFonte > 40) tamanhoFonte = 40; // Limite máximo
+      document.body.style.fontSize = tamanhoFonte + 'px';
+    }
+  
+    function restaurarFonte() {
+      tamanhoFonte = 16; // Volta pro tamanho padrão
+      document.body.style.fontSize = tamanhoFonte + 'px';
+    }
+  
+    function toggleContraste() {
+      contrasteAtivo = !contrasteAtivo;
+      if (contrasteAtivo) {
+        document.body.style.backgroundColor = '#000';
+        document.body.style.color = '#FFF';
+        // Se quiser, você também pode mudar links, botões etc
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+          link.style.color = '#00FFFF';
+        });
+      } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+          link.style.color = '';
+        });
+      }
+    }
+  </script>
+</body>
+</html>
