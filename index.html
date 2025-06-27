@@ -1,10 +1,24 @@
-<!DOCTYPE html>More actions
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Contato e Informações</title>
   <style>
+    @media (max-width: 600px) {
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  }
+    body.contraste {
+  background-color: #1a1919 !important;
+  color: #FFF !important;
+}
+
+body.contraste a {
+  color: #00FFFF !important;
+}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -93,7 +107,7 @@
     }
 
     .endereco-item:hover .endereco-conteudo {
-      max-height: 200px;
+      max-height: 600px;
       padding: 15px;
     }
 
@@ -373,6 +387,7 @@
       const painel = document.getElementById('painelAcessibilidade');
       painel.style.display = (painel.style.display === 'none' || painel.style.display === '') ? 'block' : 'none';
     }
+
 
     function alterarFonte(acao) {
       tamanhoFonte += acao;
