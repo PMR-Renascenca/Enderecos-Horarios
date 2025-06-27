@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Contato e Informações</title>
+  <title>Endereços e Contatos</title>
   <style>
     @media (max-width: 600px) {
   .card {
@@ -24,8 +24,66 @@ body.contraste a {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
     }
-
     header {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+header img {
+  height: 60px;
+  max-width: 100%;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+  font-style: italic;
+  color: #000066;
+  text-align: center;
+  flex: 1;
+}
+
+.acessibilidade-btn {
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .acessibilidade-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #painelAcessibilidade {
+    right: 10px !important;
+    width: 90% !important;
+  }
+}
+
+    /*header {
       background-color: #ffffff;
       padding: 10px 20px;
       display: flex;
@@ -36,7 +94,7 @@ body.contraste a {
 
     header img {
       height: 60px;
-    }
+    }*/
 
     .acessibilidade-btn {
       background-color: #0056b3;
@@ -121,8 +179,8 @@ body.contraste a {
   </style>
 </head>
 <body>
-
-  <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+  
+ <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
     <div style="display: flex; align-items: center;">
       <img src="PMR - LOGO -04.png" alt="Logotipo da Prefeitura Municipal de Renascença - Paraná" style="width: 300px; height: auto;">
     </div>
@@ -131,6 +189,7 @@ body.contraste a {
 
     <button class="acessibilidade-btn" onclick="toggleAcessibilidade()">Acessibilidade</button>
   </header>
+ 
   <div id="painelAcessibilidade" style="display: none; position: absolute; top: 100px; right: 20px; background: #0056b3; color: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000;">
     <button onclick="alterarFonte(1)" style="background: white; color: #0056b3; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">+ Aumentar Fonte</button>
 
